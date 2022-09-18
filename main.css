@@ -32,13 +32,9 @@ body {
 }
 
 .container {
-  /* position: relative; */
   max-width: 1440px;
   width: 100%;
   margin: auto;
-  /* height: 800px; */
-  /* display: flex; */
-  /* display: none; */
 }
 
 section {
@@ -47,15 +43,11 @@ section {
 
 section.card-display {
   flex: 0 1 600px;
-  /* position: relative; */
   color: hsl(0, 0%, 100%);
   border: var(--debug-blue);
   float: left;
-  /* flex: 1 0 auto; */
 }
 section.card-details {
-  /* position: relative; */
-  /* flex: 0 1 45%; */
   border: var(--debug-green);
   float: right;
 }
