@@ -14,8 +14,6 @@ const continueBtn = document.getElementById("continue");
 const form = document.getElementById("myForm");
 const expiryErrorMsg = document.getElementById("expiry-error");
 
-// console.log(expMM);
-
 function inputName() {
   nameOnCard.innerHTML = cardholder.value;
   thankYou.innerHTML = `Thank You ${cardholder.value}`;
@@ -25,15 +23,12 @@ function inputName() {
 }
 function inputCardNum() {
   let cardNumberInput = cardNumber.value;
-  // Do not allow users to write invalid characters
   let formattedCardNumber = cardNumberInput.replace(/[^\d]/g, "");
   formattedCardNumber = formattedCardNumber.substring(0, 16);
-  // Split the card number is groups of 4
   let cardNumberSections = formattedCardNumber.match(/\d{1,4}/g);
   if (cardNumberSections !== null) {
     formattedCardNumber = cardNumberSections.join(" ");
   }
-  // If the formmattedCardNumber is different to what is shown, change the value
   if (cardNumberInput !== formattedCardNumber) {
     cardNumber.value = formattedCardNumber;
   }
@@ -139,7 +134,6 @@ function massValidate() {
     return true;
   }
 }
-// Submit Button
 
 submit.addEventListener("click", function () {
   massValidate();
@@ -151,10 +145,7 @@ submit.addEventListener("click", function () {
     form.classList.add("hidden");
     thankYouSection.classList.remove("hidden");
   }
-  //   console.log(cardNumber.value.length > 0 && cardNumber.value.length < 16);
 });
-
-// Continue Button
 
 continueBtn.addEventListener("click", function () {
   event.preventDefault();
